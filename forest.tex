@@ -151,24 +151,23 @@
   }
 \end{frame}
 
-\begin{frame}[c]{Rolemodel Eve}
+\begin{frame}[c]{Rolemodel Devil}
   \Large
   \begin{center}
-    \only<1|handout: 0>{Do it like \textcolor{lolit}{Eve}\\}
+    \only<1|handout: 0>{Do it like the \textcolor{lolit}{Devil}\\}
     \only<2|handout: 0>{1. Seek \textcolor{hilit}{differences} and \textcolor{hilit}{inequality}\\}
     \only<3>{2. Be \textcolor{vhilit}{greedy}\\}
     \only<4>{1. differences = \textcolor{hilit}{conditions}\\
              2. greedy = \textcolor{vhilit}{order}}
   \end{center}
   \note{
-    The conditions are chosen in a way which maximizes the differences in the resulting classes.\\
-    The order is determined by how well a condition maximizes the differences. The best performing condition determines the first split. This is called ``greedy", because what delivers at first the best results, may not perform best in the long run.
+    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to our advantage.
   }
 \end{frame}
 
-\begin{frame}[c]{Moody Eve}
+\begin{frame}[c]{Moody Devil}
   \begin{center}
-    \onslide<1-2>eve = moody
+    \onslide<1-2>Devil = moody
     \onslide<2> = 
     \onslide<2-3>high entropy 
     \onslide<3> = 
@@ -186,13 +185,10 @@
     \only<3->{
       \onslide<3->Which estimate can you trust the most?\\
       \onslide<4->Coin: $\langle 0.5\rangle$\\
-      \onslide<5->Pair: $\langle 0.4, 0.6 \rangle$\\
+      \onslide<5->Pair: $\langle 0.3, 0.7 \rangle$\\
       \hspace{10mm}
     }
   \end{center}
-  \note{
-    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to our advantage.
-  }
 \end{frame}
 
 \begin{frame}[fragile]
@@ -220,6 +216,25 @@
   \onslide<2> 2. ...when samples are fairly \textcolor{hilit}{uncorrelated}.\\
   \centering
   \onslide<3> \Large How to build \textcolor{hilit}{uncorrelated} trees?
+\end{frame}
+
+\begin{frame}[c]{Pertubating Data}
+    \onslide<1-2>Trees are volatile due to \textcolor{hilit}{greediness} \& \textcolor{vhilit}{maximizing}\\
+    \onslide<2>slightly different data → drastically different trees\\
+    \onslide<3->\textcolor{lolit}{(Re-)}sampling \textcolor{hilit}{cases}\\
+    \onslide<4->sampling \textcolor{lolit}{(transformed)} \textcolor{hilit}{variables}\\
+\end{frame}
+
+\begin{frame}[c]{Pertubating Trees}
+    \onslide<1->pertubate data at each split\\
+    \onslide<2->randomize subtree order\\
+    \onslide<3->randomize splitpoints\\
+\end{frame}
+
+\begin{frame}[c]{The classic}
+    Leo Breiman (2001) proposed:
+    resampling cases for trees \onslide<2->{→ \textcolor<3>{hilit}{b}\textcolor<3>{lolit}{ootstrap} \textcolor<3>{hilit}{agg}\textcolor<3>{lolit}{egrat}\textcolor<3>{hilit}{ing }}\newline
+    sample variables for splits
 \end{frame}
 
 \begin{frame}
