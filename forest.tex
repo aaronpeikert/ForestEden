@@ -172,12 +172,54 @@
     \onslide<2> = 
     \onslide<2-3>high entropy 
     \onslide<3> = 
-    \onslide<3>sometimes useful\\
-    \onslide<4>\huge Many Trees = Forest
+    \onslide<3>sometimes useful?\\
   \end{center}
   \note{
     Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to grow many different trees. These ``forests" are created on purpose by slightly disturbing the training data. They can better differentiate between noise and systematics.
   }
+\end{frame}
+
+\begin{frame}[fragile]{The coin's other side}
+  \begin{center}
+    \onslide<1-2>{imagine there are magical coins \\}
+    \onslide<2>{you are allowed to toss them 10 times \\}
+    \only<3->{
+      \onslide<3->Which estimate can you trust the most?\\
+      \onslide<4->Coin: $\langle 0.5\rangle$\\
+      \onslide<5->Pair: $\langle 0.4, 0.6 \rangle$\\
+      \hspace{10mm}
+    }
+  \end{center}
+  \note{
+    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to our advantage.
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}
+  \begin{minipage}{\textwidth}
+    \begin{lstlisting}
+      k <- 10
+      n <- 10000
+      coin <- rbinom(n, k, .5)/k
+      pair <- cbind(rbinom(n, k, .3), rbinom(n, k, .7))/k
+      pair <- rowMeans(pair)
+      experiment <- data.frame(coin, pair)
+     \end{lstlisting}
+   \end{minipage}
+   \includegraphics{./Figs/coin}
+   \end{center}
+\end{frame}
+
+\begin{frame}
+  \includegraphics{./Figs/coin_cor}
+\end{frame}
+
+\begin{frame}[c]{Key Points}
+  \onslide<1-2> 1. Variance can be reduced by sampling more...\\
+  \onslide<2> 2. ...when samples are fairly \textcolor{hilit}{uncorrelated}.\\
+  \centering
+  \onslide<3> \Large How to build \textcolor{hilit}{uncorrelated} trees?
 \end{frame}
 
 \begin{frame}
