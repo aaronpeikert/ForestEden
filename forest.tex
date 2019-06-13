@@ -264,9 +264,29 @@
 
 \begin{frame}[c]{Encore}
   \Large
-  1. Variable importance\\
-  2. extremely randomized trees\\
-  3. Boosting \textendash{} more effective average\\
+  1. extremely randomized trees\\
+  2. Variable importance\\
+\end{frame}
+
+\begin{frame}[c]{extremely randomized trees}
+  \begin{enumerate}
+    \item at each node
+    \begin{enumerate}
+       \item choose \textcolor<2>{hilit}{randomly} $k$ variables ($k = \sqrt{n}$)
+       \item for each $variable_k$
+       \begin{enumerate}
+          \item choose \textcolor<2>{hilit}{randomly} cutpoint over $range(variable_k)$
+        \end{enumerate}
+        \item select best $variable_k$ \textcolor<3>{vhilit}{considering full sample}
+    \end{enumerate}
+    \item return subtree
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Variable importance}
+  for each $variable_i$
+  $$\frac{\sum_{m=0}^{M_i} gain_{purity}^i}{M}$$
+  where $M_i$ sum of splits where $variable_i$ was considered
 \end{frame}
 
 \begin{frame}
