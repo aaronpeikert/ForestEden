@@ -160,9 +160,12 @@
     \only<4>{1. differences = \textcolor{hilit}{conditions}\\
              2. greedy = \textcolor{vhilit}{order}}
   \end{center}
-  \note{
-    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to our advantage.
-  }
+\end{frame}
+
+\begin{frame}[c]{Question I:}
+\begin{center}
+  \Large \textcolor{lolit}{In a nutshell:} How to build a decision tree?
+\end{center}
 \end{frame}
 
 \begin{frame}[c]{Moody Devil}
@@ -171,11 +174,17 @@
     \onslide<2> = 
     \onslide<2-3>high entropy 
     \onslide<3> = 
-    \onslide<3>sometimes useful?\\
+    \onslide<3>allways bad?\\
   \end{center}
   \note{
-    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to grow many different trees. These ``forests" are created on purpose by slightly disturbing the training data. They can better differentiate between noise and systematics.
+    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not desirable, this characteristic can be used to grow many different trees. How? See the next slides.
   }
+\end{frame}
+
+\begin{frame}[c]{Question II:}
+\begin{center}
+  \Large \textcolor{lolit}{In a nutshell:}\\ Why do have trees "high variance"?
+\end{center}
 \end{frame}
 
 \begin{frame}[fragile]{The coin's other side}
@@ -208,7 +217,9 @@
 \end{frame}
 
 \begin{frame}
+  \begin{center}
   \includegraphics{./Figs/coin_cor}
+  \end{center}
 \end{frame}
 
 \begin{frame}[c]{Key Points}
@@ -219,22 +230,43 @@
 \end{frame}
 
 \begin{frame}[c]{Pertubating Data}
-    \onslide<1-2>Trees are volatile due to \textcolor{hilit}{greediness} \& \textcolor{vhilit}{maximizing}\\
-    \onslide<2>slightly different data → drastically different trees\\
-    \onslide<3->\textcolor{lolit}{(Re-)}sampling \textcolor{hilit}{cases}\\
-    \onslide<4->sampling \textcolor{lolit}{(transformed)} \textcolor{hilit}{variables}\\
+    \onslide<1-3>Trees are volatile due to \textcolor<1>{hilit}{greediness} \& \textcolor<1>{vhilit}{maximizing}\\
+    \onslide<2-3>slightly different data → \only<2>{drastically}\only<3>{\textcolor{hilit}{uncorrelated}} \only<2>{different} trees\\
+    \onslide<4->1. \textcolor{lolit}{(Re-)}sampling \textcolor{hilit}{cases}\\
+    \onslide<5->2. sampling \textcolor{lolit}{(transformed)} \textcolor{vhilit}{variables}\\
 \end{frame}
 
 \begin{frame}[c]{Pertubating Trees}
-    \onslide<1->pertubate data at each split\\
-    \onslide<2->randomize subtree order\\
-    \onslide<3->randomize splitpoints\\
+    \onslide<1->1. \textcolor{lolit}{randomize} data at each split\\
+    \onslide<2->2. \textcolor{lolit}{randomize} subtree order\\
+    \onslide<3->3. \textcolor{lolit}{randomize} splitpoints\\
 \end{frame}
 
-\begin{frame}[c]{The classic}
-    Leo Breiman (2001) proposed:
-    resampling cases for trees \onslide<2->{→ \textcolor<3>{hilit}{b}\textcolor<3>{lolit}{ootstrap} \textcolor<3>{hilit}{agg}\textcolor<3>{lolit}{egrat}\textcolor<3>{hilit}{ing }}\newline
+\begin{frame}[c]{Question III:}
+\begin{center}
+  \Large \textcolor{lolit}{In a nutshell:}\\ Why does introduced randomness reduce variance in forests?
+\end{center}
+\end{frame}
+
+\begin{frame}[c]{Answer: 42}
+\begin{center}
+  \onslide<1-2>randomness → \textcolor{vhilit}{$+$}variance tree\\
+  \onslide<2>randomness → \textcolor{hilit}{$-$}correlation → \textcolor{hilit}{$-$}variance avg\\
+  \onslide<3>\textcolor{vhilit}{$+$}variance tree \textcolor{hilit}{$-$} variance avg \textcolor{hilit}{$<0$}\\
+\end{center}
+\end{frame}
+
+\begin{frame}[c]{The classic Random Forrest}
+    Leo Breiman (2001) proposed:\\
+    resampling cases for trees \onslide<2->{→ \textcolor<3>{hilit}{b}\textcolor<3>{lolit}{ootstrap} \textcolor<3>{hilit}{agg}\textcolor<3>{lolit}{regat}\textcolor<3>{hilit}{ing }}\newline
     sample variables for splits
+\end{frame}
+
+\begin{frame}[c]{Encore}
+  \Large
+  1. Variable importance\\
+  2. extremely randomized trees\\
+  3. Boosting \textendash{} more effective average\\
 \end{frame}
 
 \begin{frame}
