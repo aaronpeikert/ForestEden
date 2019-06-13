@@ -1,6 +1,6 @@
 # Talk on &ldquo;Learning Trees and Forests&rdquo;
 
-Here you can find the [notes](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_beta/forest_withnotes.pdf), [dark slides](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_beta/forest.pdf) & bright slides [bright slides](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_beta/forest_bright.pdf).
+Here you can find the [notes](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_final/forest_withnotes.pdf), [dark slides](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_final/forest.pdf) & bright slides [bright slides](https://github.com/aaronpeikert/ForestEden/releases/download/seminar_final/forest_bright.pdf).
 
 ---
 
